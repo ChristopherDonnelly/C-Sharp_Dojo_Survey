@@ -20,17 +20,21 @@ namespace DojoSurvey.Controllers
         [Route("SubmitMessage")]
         public IActionResult SubmitMessage(string name, string location, string language, string comment)
         {
-            return RedirectToAction("result", new { name = name, location = location, language = language, comment = comment });
+            TempData["name"] = name;
+            TempData["location"] = location;
+            TempData["language"] = language;
+            TempData["comment"] = comment;
+            return RedirectToAction("result");
         }
 
         [HttpGet]
         [Route("result")]
-        public IActionResult Result(string name, string location, string language, string comment)
+        public IActionResult Result()
         {
-			ViewBag.name = name;
-            ViewBag.location = location;
-            ViewBag.language = language;
-            ViewBag.comment = comment;
+			ViewBag.name = TempData["name"];
+            ViewBag.location = TempData["location"];
+            ViewBag.language = TempData["language"];
+            ViewBag.comment = TempData["comment"];
 
             return View();
         }
