@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+<body>
+    <div class="container form-control mt-4">
+        @{
+            string title = "Dojo Survey";
+            <h1 class="pl-3 pr-3 pt-3">@title</h1>
+        }
+        <div class="row pl-2 pr-2">
+            <form id="contact-form" method="post" action="SubmitMessage" role="form" class="col-12">
+
+                <div class="messages"></div>
+
+                <div class="controls">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Your Name *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your name *" required="required" data-error="Name is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_location">Dojo Location *</label>
+                                <select name="location" class="form-control" id="form_location" required="required" data-error="Location is required.">
+                                    <option disabled hidden selected value>Dojo Location... *</option>
+                                    <option value="San Jose, Ca">San Jose, Ca</option>
+                                    <option value="Seattle, Wa">Seattle, Wa</option>
+                                    <option value="L.A., Ca">L.A., Ca</option>
+                                    <option value="Dallas, Tx">Dallas, Tx</option>
+                                    <option value="Washington, D.C.">Washington, D.C.</option>
+                                    <option value="Chicago, Il">Chicago, Il</option>
+                                    <option value="Chicago, Il">Chicago, Il</option>
+                                    <option value="Tulsa, Ok">Tulsa, Ok</option>
+                                </select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_language">Favorite Language *</label>
+                                <select name="language" class="form-control" id="form_language" required="required" data-error="Language is required.">
+                                    <option disabled hidden selected value>Favorite Language... *</option>
+                                    <option value="Python">Python</option>
+                                    <option value="MEAN">MEAN</option>
+                                    <option value="Ruby on Rails">Ruby on Rails</option>
+                                    <option value="Java">Java</option>
+                                    <option value="C# .NET">C# .NET</option>
+                                    <option value="IOS">IOS</option>
+                                    <option value="JavaScript">JavaScript</option>
+                                </select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_comment">Comment (Optional)</label>
+                                <textarea id="form_comment" name="comment" class="form-control" placeholder="Comments" rows="4"></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-right">
+                            <input type="submit" class="btn btn-success btn-send" value="Submit">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-muted pt-3"><strong>*</strong> These fields are required.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="~/js/bootstrap.min.js" ></script>
+</body>
+</html>
